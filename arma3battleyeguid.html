@@ -1,0 +1,24 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h2>Arma3 / DayZ-Standalone - BattlEye GUID calculation</h2>
+		<b>md5("BE" (2 bytes) + 64-bit SteamID (8 bytes))</b>
+		<br />
+		<p>C++ Example</p>
+		<pre>
+std::stringstream bestring;
+__int64 steamID = 76561197996545192;
+__int8 i = 0, parts[8] = { 0 };
+do parts[i++] = steamID & 0xFF;
+while (steamID >>= 8);
+
+bestring << "BE";
+for (int i = 0; i < sizeof(parts); i++) {
+	bestring << char(parts[i]);
+}
+
+std::cout << md5(bestring.str()) << std::endl;
+		</pre>
+	</body>
+</html>
