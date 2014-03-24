@@ -5,7 +5,7 @@
 		<h2>Arma3 / DayZ-Standalone - BattlEye GUID calculation</h2>
 		<b>md5("BE" (2 bytes) + 64-bit SteamID (8 bytes))</b>
 		<br />
-		<p>C++ Example</p>
+		<p><u><b>C++ Example</b></u></p>
 		<pre>
 std::stringstream bestring;
 __int64 steamID = 76561197996545192;
@@ -19,6 +19,30 @@ for (int i = 0; i < sizeof(parts); i++) {
 }
 
 std::cout << md5(bestring.str()) << std::endl;
+		</pre>
+		<br />
+		<p><u><b>Python Example</b></u></p>
+		<pre>
+package main
+
+import (
+	"crypto/md5"
+	"fmt"
+)
+
+func main() {
+	steamid := 76561197996545192
+
+	h := md5.New()
+	h.Write([]byte("BE"))
+
+	for i := 0; i < 8; i++ {
+		h.Write([]byte{byte(steamid & 0xFF)})
+		steamid >>= 8
+	}
+
+	fmt.Printf("Battleye GUID: %x", h.Sum(nil))
+}
 		</pre>
 	</body>
 </html>
