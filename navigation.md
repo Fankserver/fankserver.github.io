@@ -1,6 +1,5 @@
-# Fankserver
+# Your wiki name
 
-[Home](index.md)
-[Infos]()
-
-	* [ArmA 2/3](arma.md)
+[Home](home.md)
+[About](about.md)
+[Download](download.md)
