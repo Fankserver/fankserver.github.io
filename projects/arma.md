@@ -1,4 +1,4 @@
-![ArmA 2](img/arma2.png) ![ArmA 3](img/arma3.png) 
+![ArmA 2](/img/arma2.png) ![ArmA 3](/img/arma3.png) 
 =================
 
 ArmA 3 Missions
